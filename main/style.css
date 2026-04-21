@@ -1,0 +1,213 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #f2f2f2 0%,
+    #4b689e 50%,
+    #0035a7 100%
+  );
+
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  gap: 100px;
+}
+
+/* CARRINHO */
+.carrinho {
+  width: 260px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+
+  position: sticky;
+  top: 20px;
+
+  max-height: calc(70vh - 40px);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-pedido {
+  flex: 1;
+  overflow-y: auto;
+  margin: 10px 0;
+  min-height: 0;
+}
+
+.total-box {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  background: white;
+}
+
+/* CARDÁPIO */
+.conteudo {
+  flex: 1;
+}
+
+/* BOTÕES GERAIS */
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  background: rgb(0, 163, 168);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* GRID */
+#lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 15px;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 140px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* IMAGEM */
+.item-img {
+  width: 120px;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* CONTEÚDO CENTRAL */
+.card-info {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card-info p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+/* BOTÃO */
+.card button {
+  width: 70px;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  background: #00a8a8;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+#listaExtras label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.filtro-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.filtro-opcoes {
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  top: 40px;
+  left: 0;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.filtro-opcoes div {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.filtro-opcoes div:hover {
+  background: #eee;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-conteudo {
+  background: white;
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-conteudo button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.item-pedido {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-remover {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.info-pedido {
+  flex: 1;
+}

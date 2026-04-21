@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardápio Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🍔 Cardápio Digital</h1>
+
+  <div class="container">
+
+    <!-- CARRINHO -->
+    <div class="carrinho">
+      <h2>Carrinho</h2>
+
+      <div class="lista-pedido">
+        <ul id="pedido"></ul>
+      </div>
+
+      <div class="total-box">
+        <p><strong>Total: R$ <span id="total">0,00</span></strong></p>
+        <button onclick="abrirPagamento()">Finalizar Pedido</button>
+      </div>
+    </div>
+
+    <!-- CARDÁPIO -->
+    <div class="conteudo">
+
+      <div class="filtro-box">
+        <button onclick="toggleFiltro()">☰ Filtrar</button>
+
+        <div id="opcoesFiltro" class="filtro-opcoes">
+          <button onclick="filtrar('Todos')">Todos</button>
+          <button onclick="filtrar('Lanches')">Lanches</button>
+          <button onclick="filtrar('Pratos')">Pratos</button>
+          <button onclick="filtrar('Bebidas')">Bebidas</button>
+          <button onclick="filtrar('Sobremesas')">Sobremesas</button>
+        </div>
+      </div>
+
+      <div id="lista"></div>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="modalPagamento" class="modal">
+    <div class="modal-conteudo">
+      <h2>Escolha a forma de pagamento</h2>
+
+      <button onclick="finalizarPedido()">💵 Dinheiro</button>
+      <button onclick="finalizarPedido()">💳 Crédito</button>
+      <button onclick="finalizarPedido()">💳 Débito</button>
+      <button onclick="finalizarPedido()">📱 Pix</button>
+
+      <br><br>
+      <button onclick="fecharPagamento()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- POPUP EXTRAS -->
+  <div id="modalExtras" class="modal">
+    <div class="modal-conteudo">
+      <h2 id="tituloExtras"></h2>
+
+      <div id="listaExtras"></div>
+
+      <br>
+      <button onclick="confirmarExtras()">Adicionar ao pedido</button>
+      <button onclick="fecharExtras()">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
